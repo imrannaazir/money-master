@@ -41,24 +41,24 @@
                     <h1 class="text-center fs-4 mt-4">Income</h1>
                     <div class="row">
                         <p class="col-md-4 fs-5 ps-5">Income:</p>
-                        <input class="col-md-7 border-0 input-style" type="text" name="" id="">
+                        <input class="col-md-7 border-0 input-style" type="text" name="" id="income-field">
                     </div>
                     <!-- Expenses input  -->
                     <h1 class="text-center  fs-4 mt-3 mb-3">Expenses</h1>
                     <div class="row">
                         <p class="col-md-4 fs-5 ps-5">Food:</p>
-                        <input class="col-md-7 border-0 input-style" type="text" name="" id="">
+                        <input class="col-md-7 border-0 input-style" type="text" name="" id="food-field">
                         <p class="col-md-4 fs-5 ps-5">Rent:</p>
-                        <input class="col-md-7 border-0 input-style" type="text" name="" id="">
+                        <input class="col-md-7 border-0 input-style" type="text" name="" id="rent-field">
                         <p class="col-md-4 fs-5 ps-5">Clothes:</p>
-                        <input class="col-md-7 border-0 input-style" type="text" name="" id="">
+                        <input class="col-md-7 border-0 input-style" type="text" name="" id="clothes-field">
                     </div>
 
                     <!-- income & Expenses calculation  -->
 
-                    <div class="text-center"><button class="btn-style ps-5 pe-5">Calculate</button></div>
-                    <h1 class="text-center fs-4 mt-4">Total Expenses: <span>00</span></h1>
-                    <h1 class="text-center fs-4 mb-4">Balance: <span>00</span></h1>
+                    <div class="text-center"><button id="calcu-btn" class="btn-style ps-5 pe-5">Calculate</button></div>
+                    <h1 class="text-center fs-4 mt-4">Total Expenses: <span id="total-expenses">00</span></h1>
+                    <h1 class="text-center fs-4 mb-4">Balance: <span id="balance">00</span></h1>
 
                     <!-- save input  -->
                     <div class="row">
@@ -74,6 +74,9 @@
             </div>
         </section>
     </main>
+
+    <!-- js link  -->
+    <script src="script.js"></script>
 </body>
 
 </html>
