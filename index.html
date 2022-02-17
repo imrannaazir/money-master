@@ -40,36 +40,42 @@
                     <!-- income input  -->
                     <h1 class="text-center fs-4 mt-4">Income</h1>
                     <div class="row">
-                        <p class="col-md-4 fs-5 ps-5">Income:</p>
-                        <input class="col-md-7 border-0 input-style" type="text" name="" id="income-field">
+                        <p class="col-sm-4 fs-5 ps-5">Income:</p>
+                        <input class="col-sm-7 border-0 input-style" type="text" name="" id="income-field">
                     </div>
                     <!-- Expenses input  -->
                     <h1 class="text-center  fs-4 mt-3 mb-3">Expenses</h1>
                     <div class="row">
-                        <p class="col-md-4 fs-5 ps-5">Food:</p>
-                        <input class="col-md-7 border-0 input-style" type="text" name="" id="food-field">
-                        <p class="col-md-4 fs-5 ps-5">Rent:</p>
-                        <input class="col-md-7 border-0 input-style" type="text" name="" id="rent-field">
-                        <p class="col-md-4 fs-5 ps-5">Clothes:</p>
-                        <input class="col-md-7 border-0 input-style" type="text" name="" id="clothes-field">
+                        <p class="col-sm-4 fs-5 ps-5">Food:</p>
+                        <input class="col-sm-7 border-0 input-style" type="text" name="" id="food-field">
+                        <p class="col-sm-4 fs-5 ps-5">Rent:</p>
+                        <input class="col-sm-7 border-0 input-style" type="text" name="" id="rent-field">
+                        <p class="col-sm-4 fs-5 ps-5">Clothes:</p>
+                        <input class="col-sm-7 border-0 input-style" type="text" name="" id="clothes-field">
                     </div>
 
                     <!-- income & Expenses calculation  -->
 
                     <div class="text-center"><button id="calcu-btn" class="btn-style ps-5 pe-5">Calculate</button></div>
-                    <h1 class="text-center fs-4 mt-4">Total Expenses: <span id="total-expenses">00</span></h1>
-                    <h1 class="text-center fs-4 mb-4">Balance: <span id="balance">00</span></h1>
+                    <h1 class="text-center fs-4 balance-view mt-4 text-primary">Total Expenses: <span class="text-black"
+                            id="total-expenses">0</span>
+                    </h1>
+                    <h1 class="text-center fs-4 balance-view mb-4 mt-3 text-primary">Balance: <span class="text-black"
+                            id="balance">0</span></h1>
 
                     <!-- save input  -->
                     <div class="row">
-                        <p class="col-md-2 fs-5">Save:</p>
-                        <input class="col-md-3 border-0 input-style" type="text" name="" id="">
-                        <p class="col-md-2 fs-5">%</p>
-                        <button class="col-md-3 btn-style">Save</button>
+                        <p class="col-sm-2 fs-5 ms-4">Save:</p>
+                        <input class="col-sm-3 border-0 input-style" type="text" name="" id="save-field">
+                        <p class="col-sm-2 fs-5">%</p>
+                        <button id="save-btn" class="col-sm-3 btn-style mb-3">Save</button>
                     </div>
                     <!-- save calculation  -->
-                    <h1 class="text-center  fs-4">Saving Amount: <span>00</span></h1>
-                    <h1 class="text-center  fs-4">Remaining Balance: <span>00</span></h1>
+                    <h1 class="text-center balance-view fs-4 text-primary">Saving Amount: <span class="text-black"
+                            id="save-balance">0</span></h1>
+                    <h1 class="text-center balance-view fs-4 mt-3 text-primary">Remaining Balance: <span
+                            class="text-black" id="remaining-balance">0</span>
+                    </h1>
                 </div>
             </div>
         </section>

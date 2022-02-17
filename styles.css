@@ -4,6 +4,7 @@
     height: 44px;
     
     margin-bottom: 20px;
+    border-radius: 5px;
 }
 .btn-style{
     background-color: #59A5FF;
@@ -13,4 +14,11 @@
     font-size: 20px;
     font-weight: 500;
     border-radius: 2px;
+}
+.balance-view{
+    background-color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 1px 5px #888888;
 }
