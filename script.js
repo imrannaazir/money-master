@@ -21,28 +21,33 @@ function subtraction(fristAmount, secondAmount) {
     return result;
 }
 
-// negetive no error handle function
+
 
 
 
 //calculation button click hadeler addeded
 calcuBtn.addEventListener('click', function () {
+
+    // typeof error handle
     const expenses = parseFloat(foodField.value) + parseFloat(rentField.value) + parseFloat(clothesField.value)
     if (isNaN(foodField.value) || isNaN(rentField.value) || isNaN(incomeField.value) || isNaN(clothesField.value)) {
         alert('Opps!! You must input the number.')
     }
+    // negetive error handle 
     else if (incomeField.value < 0 || foodField.value < 0 || rentField.value < 0 || clothesField.value < 0) {
-        alert('Invalid input!!! Please enter all possitive value.')
+        alert('Invalid input!!! Please enter the possitive value.')
     }
+    // isBigger error handle 
     else if (incomeField.value < expenses) {
         alert('Something wrong!! Your income will not cover your expenses.')
     }
+    // income and expenses calculation
     else {
         totalExpenses.innerText = expenses;
         balance.innerText = subtraction(incomeField.value, totalExpenses.innerText)
 
     }
-
+    // empty field
     foodField.value = ''
     rentField.value = ''
     clothesField.value = ''
@@ -53,20 +58,25 @@ calcuBtn.addEventListener('click', function () {
 saveBtn.addEventListener('click', function () {
 
     const finalSaving = parseFloat(incomeField.value) * parseFloat(saveField.value) / 100;
+    // isBigger error handle 
     if (finalSaving > balance.innerText) {
         alert('Sorry!! You do not have sufficient balance for saving this amount.')
     }
+    // negetive error handle 
     else if (saveField.value < 0) {
         alert('Invalid input!!! Please enter the possitive value.')
     }
+    // typeof error handle
     else if (isNaN(saveField.value)) {
         alert('Opps!! You must input the number.')
     }
+    // saving calculation 
     else {
         saveBalance.innerText = finalSaving
         remainingBalance.innerText = subtraction(balance.innerText, saveBalance.innerText)
         incomeField.value = ''
     }
+    // make field empty 
 
     saveField.value = ''
 })
