@@ -28,14 +28,14 @@ function subtraction(fristAmount, secondAmount) {
 //calculation button click hadeler addeded
 calcuBtn.addEventListener('click', function () {
     const expenses = parseFloat(foodField.value) + parseFloat(rentField.value) + parseFloat(clothesField.value)
-    if (incomeField.value < expenses) {
-        alert('Something wrong!! Your income will not cover your expenses.')
-    }
-    else if (isNaN(foodField.value) || isNaN(rentField.value) || isNaN(incomeField.value) || isNaN(clothesField.value)) {
+    if (isNaN(foodField.value) || isNaN(rentField.value) || isNaN(incomeField.value) || isNaN(clothesField.value)) {
         alert('Opps!! You must input the number.')
     }
     else if (incomeField.value < 0 || foodField.value < 0 || rentField.value < 0 || clothesField.value < 0) {
         alert('Invalid input!!! Please enter all possitive value.')
+    }
+    else if (incomeField.value < expenses) {
+        alert('Something wrong!! Your income will not cover your expenses.')
     }
     else {
         totalExpenses.innerText = expenses;
