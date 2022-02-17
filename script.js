@@ -59,17 +59,19 @@ saveBtn.addEventListener('click', function () {
 
     const finalSaving = parseFloat(incomeField.value) * parseFloat(saveField.value) / 100;
     // isBigger error handle 
-    if (finalSaving > balance.innerText) {
-        alert('Sorry!! You do not have sufficient balance for saving this amount.')
+    if (isNaN(saveField.value)) {
+        alert('Opps!! You must input the number.')
     }
+
     // negetive error handle 
     else if (saveField.value < 0) {
         alert('Invalid input!!! Please enter the possitive value.')
     }
     // typeof error handle
-    else if (isNaN(saveField.value)) {
-        alert('Opps!! You must input the number.')
+    else if (finalSaving > balance.innerText) {
+        alert('Sorry!! You do not have sufficient balance for saving this amount.')
     }
+
     // saving calculation 
     else {
         saveBalance.innerText = finalSaving
