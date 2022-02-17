@@ -15,15 +15,33 @@ const remainingBalance = document.getElementById('remaining-balance')
 const calcuBtn = document.getElementById('calcu-btn')
 const saveBtn = document.getElementById('save-btn');
 
+// function for defference
+function subtraction(fristAmount, secondAmount) {
+    const result = parseFloat(fristAmount) - parseFloat(secondAmount);
+    return result;
+}
+
+// negetive no error handle function
+
 
 
 //calculation button click hadeler addeded
 calcuBtn.addEventListener('click', function () {
-    const expenses = parseInt(foodField.value) + parseInt(rentField.value) + parseInt(clothesField.value)
-    totalExpenses.innerText = parseInt(totalExpenses.innerText) + expenses;
-    balance.innerText = parseInt(incomeField.value) - parseInt(totalExpenses.innerText)
+    const expenses = parseFloat(foodField.value) + parseFloat(rentField.value) + parseFloat(clothesField.value)
+    if (incomeField.value < expenses) {
+        alert('Something wrong!! Your income will not cover your expenses.')
+    }
+    else if (isNaN(foodField.value) || isNaN(rentField.value) || isNaN(incomeField.value) || isNaN(clothesField.value)) {
+        alert('Opps!! You must input the number.')
+    }
+    else if (incomeField.value < 0 || foodField.value < 0 || rentField.value < 0 || clothesField.value < 0) {
+        alert('Invalid input!!! Please enter all possitive value.')
+    }
+    else {
+        totalExpenses.innerText = expenses;
+        balance.innerText = subtraction(incomeField.value, totalExpenses.innerText)
 
-
+    }
 
     foodField.value = ''
     rentField.value = ''
@@ -33,9 +51,22 @@ calcuBtn.addEventListener('click', function () {
 
 // save button click handeler addeded
 saveBtn.addEventListener('click', function () {
-    saveBalance.innerText = parseInt(incomeField.value) * parseInt(saveField.value) / 100;
-    remainingBalance.innerText = parseInt(balance.innerText) - parseInt(saveBalance.innerText)
 
-    incomeField.value = ''
+    const finalSaving = parseFloat(incomeField.value) * parseFloat(saveField.value) / 100;
+    if (finalSaving > balance.innerText) {
+        alert('Sorry!! You do not have sufficient balance for saving this amount.')
+    }
+    else if (saveField.value < 0) {
+        alert('Invalid input!!! Please enter the possitive value.')
+    }
+    else if (isNaN(saveField.value)) {
+        alert('Opps!! You must input the number.')
+    }
+    else {
+        saveBalance.innerText = finalSaving
+        remainingBalance.innerText = subtraction(balance.innerText, saveBalance.innerText)
+        incomeField.value = ''
+    }
+
     saveField.value = ''
 })
